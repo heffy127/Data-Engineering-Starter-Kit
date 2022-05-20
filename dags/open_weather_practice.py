@@ -1,3 +1,8 @@
+"""
+Airflow, Open Weather API를 활용하요
+이후 7일간의 서울시 낮기온, 최고 기온, 최저 기온 데이터 Redshift에 적재
+"""
+
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.models import Variable
@@ -14,6 +19,7 @@ import json
 
 
 def get_Redshift_connection():
+    # Airflow 내 Connections 활용
     hook = PostgresHook(postgres_conn_id='redshift_dev_db')
     return hook.get_conn().cursor()
 
