@@ -21,6 +21,11 @@ import json
 def get_Redshift_connection():
     # Airflow 내 Connections 활용
     hook = PostgresHook(postgres_conn_id='redshift_dev_db')
+    # Autocommit True를 원하면 
+    """
+    conn = hook.get_conn()
+    conn.autocommit = autocommit
+    """
     return hook.get_conn().cursor()
 
 
