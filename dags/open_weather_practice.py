@@ -80,8 +80,8 @@ def load(**context):
         logging.info(sql)
         cur.execute(sql)
     except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
         cur.execute("ROLLBACK;")
+        raise
 
     
 
