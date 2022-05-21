@@ -1,5 +1,5 @@
 """
-Airflow, Open Weather API를 활용하요
+Airflow, Open Weather API를 활용하
 이후 7일간의 서울시 낮기온, 최고 기온, 최저 기온 데이터 Redshift에 적재
 """
 
